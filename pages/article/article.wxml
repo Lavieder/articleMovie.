@@ -16,22 +16,23 @@
   </view>
   <!-- 文章列表 -->
   <view class="article-container">
-    <view class="author-author">
-      <image class="author-avatar" src="/images/avatar/1.jpg"></image>
-      <view class="name-date">
-        <text class="author-name">(+_+)</text>
-        <text class="article-date">2022.12.4</text>
-      </view>
+    <view  wx:for="{{articleList}}" wx:key="postId">
+        <view class="author-author">
+          <image class="author-avatar" src="{{item.avatar}}"></image>
+          <view class="name-date">
+            <text class="author-name">{{item.author}}</text>
+            <text class="article-date">{{item.date}}</text>
+          </view>
+        </view>
+        <text class="article-title">{{item.title}}</text>
+        <image class="article-image" src="{{item.imgSrc}}"></image>
+        <text class="article-content">{{item.content}}</text>
+        <view class="article-like">
+          <l-icon name="favor" size="28" color="#616161" />
+          <text class="article-like-num">{{item.collection}}</text>
+          <l-icon class="article-scan" name="eye" size="28" color="#616161" />
+          <text class="article-like-num">{{item.reading}}</text> 
+        </view>
     </view>
-    <text class="article-title">标题标题标题标题标题</text>
-    <image class="article-image" src="/images/article/7.png"></image>
-    <text class="article-content">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</text>
-    <view class="article-like">
-      <image class="article-like-image" src="/images/icon/chat.png"></image>
-      <text class="article-like-num">92</text>
-      <image class="article-like-image article-scan" src="/images/icon/view.png"></image>
-      <text class="article-like-num">512</text>
-    </view>
-
   </view>
 </view>
