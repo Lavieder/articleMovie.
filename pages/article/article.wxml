@@ -1,0 +1,37 @@
+<!-- 文章页面 -->
+<view>
+<!-- 轮播图 -->
+  <view>
+    <swiper autoplay circular indicator-dots="true" indicator-active-color="#ffffff">
+      <swiper-item>
+        <image src="/images/article/bestplayers.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/article/lpl.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/article/jumpfly.png"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 文章列表 -->
+  <view class="article-container">
+    <view class="author-author">
+      <image class="author-avatar" src="/images/avatar/1.jpg"></image>
+      <view class="name-date">
+        <text class="author-name">(+_+)</text>
+        <text class="article-date">2022.12.4</text>
+      </view>
+    </view>
+    <text class="article-title">标题标题标题标题标题</text>
+    <image class="article-image" src="/images/article/7.png"></image>
+    <text class="article-content">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</text>
+    <view class="article-like">
+      <image class="article-like-image" src="/images/icon/chat.png"></image>
+      <text class="article-like-num">92</text>
+      <image class="article-like-image article-scan" src="/images/icon/view.png"></image>
+      <text class="article-like-num">512</text>
+    </view>
+
+  </view>
+</view>
