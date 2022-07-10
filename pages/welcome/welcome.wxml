@@ -1,0 +1,8 @@
+<!-- 欢迎页 -->
+<view class="weblcome-page">
+  <view class="avatar">
+    <image src="/images/1.jpg" mode="aspectFit" lazy-load></image>
+  </view>
+  <text class="user-name">hello, 七月</text>
+  <view class="welcome-btn">开启小程序之旅</view>
+</view>

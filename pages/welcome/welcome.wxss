@@ -1,0 +1,41 @@
+.weblcome-page {
+  display: flex;
+  /* 排列方向:从上到下垂直方向排列 */
+  flex-direction: column;
+  align-items: center;
+  background-color: #b3d4db;
+  
+}
+.avatar {
+  margin-top: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar image {
+  width: 200rpx;
+  height: 200rpx;
+}
+.user-name {
+  margin-top: 70rpx;
+  font-size: 33rpx;
+  font-weight: bold;
+}
+
+.welcome-btn {
+  margin-top: 200rpx;
+  width: 250rpx;
+  height: 80rpx;
+  border: 1px solid #405f80;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: #405f80;
+  text-align: center;
+  line-height: 80rpx;
+  font-weight: 700;
+}
+
+page {
+  background-color: #b3d4db;
+}
