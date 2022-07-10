@@ -6,8 +6,8 @@
   background-color: #b3d4db;
   
 }
-.avatar {
-  margin-top: 200rpx;
+/* .avatar {
+  margin-top: 200rpx; 
   width: 200rpx;
   height: 200rpx;
   border-radius: 50%;
@@ -16,7 +16,12 @@
 .avatar image {
   width: 200rpx;
   height: 200rpx;
+}  */
+.l-avatar {
+  margin-top: 200rpx;
 }
+
+
 .user-name {
   margin-top: 70rpx;
   font-size: 33rpx;
