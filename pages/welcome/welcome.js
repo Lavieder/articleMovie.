@@ -7,6 +7,13 @@ Page({
   data: {
 
   },
+  // 用户点击开始小程序按钮
+  onTap:function () {
+    // 跳转到文章页面，路由
+    wx.redirectTo({
+      url: "/pages/article/article"
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

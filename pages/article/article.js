@@ -1,4 +1,8 @@
-const { postList } = require("../../data/posts-data");
+// ES5导入
+// const { postList } = require("../../data/posts-data");
+// ES6导入(推荐)
+import { articleList, bannerList } from "../../data/posts-data"
+
 
 // pages/article/article.js
 Page({
@@ -7,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bannerList: [],
     articleList: []
   },
 
@@ -15,7 +20,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      articleList: postList
+      articleList,
+      bannerList
     })
   },
 

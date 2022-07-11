@@ -3,20 +3,14 @@
 <!-- 轮播图 -->
   <view>
     <swiper autoplay circular indicator-dots="true" indicator-active-color="#ffffff">
-      <swiper-item>
-        <image src="/images/article/bestplayers.png"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="/images/article/lpl.png"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="/images/article/jumpfly.png"></image>
+      <swiper-item wx:for="{{bannerList}}" wx:for-item="banner" wx:key="bid">
+        <image src="{{banner.imgSrc}}"></image>
       </swiper-item>
     </swiper>
   </view>
   <!-- 文章列表 -->
   <view class="article-container">
-    <view  wx:for="{{articleList}}" wx:key="postId">
+    <view wx:for="{{articleList}}" wx:key="postId">
         <view class="author-author">
           <image class="author-avatar" src="{{item.avatar}}"></image>
           <view class="name-date">

@@ -3,7 +3,7 @@
   <!-- <view class="avatar">
     <image src="/images/1.jpg" mode="aspectFit" lazy-load></image>
   </view> -->
-  <l-avatar class="l-avatar" src="/images/1.jpg" shape="circle" size="200" />
+  <l-avatar class="l-avatar" src="/images/avatar/1.jpg" shape="circle" size="200" />
   <text class="user-name">hello, (+_+)</text>
-  <view class="welcome-btn">开启小程序之旅</view>
+  <view bind:tap="onTap" class="welcome-btn">开启小程序之旅</view>
 </view>
