@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -12,11 +13,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "article",
-          "pathName": "pages/article/article",
-          "query": "",
+          "name": "post-detail",
+          "pathName": "pages/post-detail/post-detail",
+          "query": "pid=2794518",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "/article",
+          "pathName": "pages/article/article",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

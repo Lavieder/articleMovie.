@@ -1,0 +1,26 @@
+<view class="detail-container">
+  <image class="article-image" src="{{article.imgSrc}}"></image>
+  <view class="article-info">
+    <view class="author-time">
+      <image class="avatar-image" src="{{article.avatar}}"></image>
+      <view class="author-publish">
+        <text class="author">{{article.author}}</text>
+        <text class="publish-time">发表于<text>{{article.dateTime}}</text></text>
+      </view>
+    </view>
+    <view class="article-title">
+      <text>{{article.title}}</text>
+    </view>
+    <view class="tool">
+      <view class="collect-share">
+        <image bind:tap="onCollect" wx:if="{{collected}}" src="/images/icon/collection.png">收藏</image>
+        <image bind:tap="onCollect" wx:else src="/images/icon/collection-anti.png">收藏</image>
+        <image class="share-img" src="/images/icon/share.png">分享</image>
+      </view>
+      <view class="horizon"></view>
+    </view>
+    <view class="article-content">
+      <text user-select="{{true}}">{{article.detail}}</text>
+    </view>
+  </view>
+</view>
