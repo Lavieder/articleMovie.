@@ -1,5 +1,8 @@
 <view class="detail-container">
   <image class="article-image" src="{{article.imgSrc}}"></image>
+  <image wx:if="{{!isPlaying}}" class="music-image" bind:tap="onMusicStart" src="/images/music/music-start.png"></image>
+  <image wx:else class="music-image" bind:tap="onMusicStop" src="/images/music/music-stop.png"></image>
+
   <view class="article-info">
     <view class="author-time">
       <image class="avatar-image" src="{{article.avatar}}"></image>
@@ -15,7 +18,7 @@
       <view class="collect-share">
         <image bind:tap="onCollect" wx:if="{{collected}}" src="/images/icon/collection.png">收藏</image>
         <image bind:tap="onCollect" wx:else src="/images/icon/collection-anti.png">收藏</image>
-        <image class="share-img" src="/images/icon/share.png">分享</image>
+        <image bind:tap="onShare" class="share-img" src="/images/icon/share.png">分享</image>
       </view>
       <view class="horizon"></view>
     </view>

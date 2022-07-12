@@ -47,7 +47,7 @@
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
+  "libVersion": "2.25.0",
   "appid": "wx27c8b9537121551c",
   "projectname": "articleMovie",
   "debugOptions": {

@@ -4,6 +4,7 @@
     "pages/article/article",
     "pages/post-detail/post-detail"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "navigationBarBackgroundColor": "#c22a1e"
   },
