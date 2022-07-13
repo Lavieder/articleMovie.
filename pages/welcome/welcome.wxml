@@ -5,5 +5,5 @@
   </view> -->
   <l-avatar class="l-avatar" src="/images/avatar/1.jpg" shape="circle" size="200" />
   <text class="user-name">hello, (+_+)</text>
-  <view bind:tap="onTap" class="welcome-btn">开启小程序之旅</view>
+  <view bind:tap="onWelcomeTap" bind:touchstart="onTouch" bind:touchend="onTouch"  class="welcome-btn {{isTouchBgColor?'touch-bgcolor':''}}">开启小程序之旅</view>
 </view>

@@ -1,0 +1,42 @@
+page {
+  background-color: #f2f2f2;
+}
+.movie-list {
+  margin-bottom: 30rpx;
+}
+
+.ex-search-bar {
+  /* background-color: aqua!important; */
+  height: 100rpx!important;
+  background-color: #ffffff;
+}
+
+.search-container {
+  padding: 34rpx 26rpx;
+  box-sizing: border-box;
+}
+.search-text {
+  margin-bottom: 30rpx;
+}
+.search-text text {
+  font-size: 24rpx;
+}
+.search-movies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+}
+/* 解决2个元素时中间留空的效果 */
+.search-movies::after {
+  content: "";
+  width: 200rpx;
+}
+
+.movie {
+  margin-bottom: 34rpx;
+}
+
+

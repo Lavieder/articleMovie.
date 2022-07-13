@@ -1,0 +1,16 @@
+<view>
+  <l-search-bar value="{{inputValue}}" bind:linconfirm="onConfirm" bind:lincancel="onSearchCancel" bind:linclear="onSearchCancel" shape="circle" placeholder="血战钢锯岭"  l-container-class="ex-search-bar"  />
+  <view wx:if="{{!searchResult}}">
+    <movie-list movies="{{inTheaters}}" data-type="in_theaters" bind:onGoToMoreMovie="onGoToMoreMovie" bind:onTouchStart="onTouchStart" bind:onTouchEnd="onTouchEnd" title="正在热映" m-class="movie-list" touch-bgcolor="{{isTouchBgColor&&type=='in_theaters'?'touch-bgcolor':''}}" />
+    <movie-list movies="{{comingSoon}}" data-type="coming_soon"  bind:onGoToMoreMovie="onGoToMoreMovie" bind:onTouchStart="onTouchStart" bind:onTouchEnd="onTouchEnd" title="即将上映" m-class="movie-list" touch-bgcolor="{{isTouchBgColor&&type=='coming_soon'?'touch-bgcolor':''}}" />
+    <movie-list movies="{{top250}}" data-type="top250" bind:onGoToMoreMovie="onGoToMoreMovie" bind:onTouchStart="onTouchStart" bind:onTouchEnd="onTouchEnd" title="豆瓣Top250" m-class="movie-list" touch-bgcolor="{{isTouchBgColor&&type=='top250'?'touch-bgcolor':''}}"/>
+  </view>
+  <view wx:else class="search-container">
+    <view class="search-text">搜索结果<text>(共 {{serachMovies.count}} 条数据)</text></view>
+    <view class="search-movies">
+      <block wx:for="{{serachMovies.subjects}}" wx:key="index">
+        <movie movie="{{item}}" class="movie" />
+      </block>
+    </view>
+  </view>
+</view>

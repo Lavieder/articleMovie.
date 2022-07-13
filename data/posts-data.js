@@ -129,16 +129,16 @@ const articleList = [
 ];
 const bannerList = [
   {
-    bid: 0,
-    imgSrc: "/images/article/bestplayers.png"
+    bid: 1537285,
+    imgSrc: "/images/article/crab.png"
   },
   {
-    bid: 1,
-    imgSrc: "/images/article/lpl.png"
+    bid: 3145221,
+    imgSrc: "/images/article/sls.jpg"
   },
   {
-    bid: 2,
-    imgSrc: "/images/article/jumpfly.png"
+    bid: 1539725,
+    imgSrc: "/images/article/bl.png"
   }
 ]
 

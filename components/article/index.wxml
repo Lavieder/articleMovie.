@@ -1,0 +1,20 @@
+<view bind:tap="onTap" data-postId="{{articleItem.postId}}" bind:touchstart="onTouchStart" bind:touchend="onTouchEnd"  class="article-container article-touch">
+  <view class="author-avatar-like">
+    <view class="avatar-date">
+      <image class="author-avatar" src="{{articleItem.avatar}}"></image>
+      <view class="name-date">
+        <text class="author-name">{{articleItem.author}}</text>
+        <text class="article-date">{{articleItem.date}}</text>
+      </view>
+    </view>
+    <view class="article-like">
+      <l-icon name="favor" size="28" color="#616161" />
+      <text class="article-like-num">{{articleItem.collection}}</text>
+      <l-icon class="article-scan" name="eye" size="28" color="#616161" />
+      <text class="article-like-num">{{articleItem.reading}}</text>
+    </view>
+  </view>
+  <text class="article-title">{{articleItem.title}}</text>
+  <image class="article-image" src="{{articleItem.imgSrc}}"></image>
+  <text class="article-content">{{articleItem.content}}</text>
+</view>

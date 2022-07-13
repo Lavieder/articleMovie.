@@ -1,0 +1,8 @@
+<view class="movie-container movie-touch" bind:touchstart="onTouchStart" bind:touchend="onTouchEnd">
+  <image class="movie-img" src="{{movie.images.large}}"></image>
+  <text class="title">{{movie.title}}</text>
+  <view class="rate">
+    <l-rate score="{{movie.rating.stars/10}}" size="22" item-gap="5" disabled/>
+    <text class="score">{{movie.rating.average}}</text>
+  </view>
+</view>

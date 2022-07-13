@@ -2,17 +2,18 @@
 // const { postList } = require("../../data/posts-data");
 // ES6导入(推荐)
 import { articleList, bannerList } from "../../data/posts-data"
-
+const app = getApp()
 
 // pages/article/article.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     bannerList: [],
-    articleList: []
+    articleList: [],
+    currentPostId: -1,
+    isTouchBgColor: false
   },
 
   /**
@@ -25,10 +26,25 @@ Page({
     })
   },
 
-  onGoToDetail (event){
-    const pid = event.currentTarget.dataset.postid;
+  onDetail (event){
+    this.onTouchStart(event);
+    const pid = event.detail.postId || event.currentTarget.dataset.postid;
     wx.navigateTo({
       url: '/pages/post-detail/post-detail?pid='+pid,
+    })
+    this.onTouchEnd()
+  },
+  // 触摸显示选中的背景
+  onTouchStart(event){
+    this.setData({
+      currentPostId: event.detail.postId,
+      isTouchBgColor: true
+    })
+  },
+  onTouchEnd(event){
+    this.setData({
+      currentPostId: -1,
+      isTouchBgColor: false
     })
   },
 

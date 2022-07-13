@@ -1,0 +1,26 @@
+.container {
+  padding: 0rpx 26rpx 40rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  background-color: #ffffff;
+}
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.more-movie {
+  color: #003194;
+}
+
+.movie-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.touch-bgcolor {
+  background-color: rgba(0, 0, 0, 0.1)!important;
+}

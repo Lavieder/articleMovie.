@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34rpx 26rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+/* 解决2个元素时中间留空的效果 */
+.container::after {
+  content: "";
+  width: 200rpx;
+}
+.movie {
+  margin-bottom: 34rpx;
+}

@@ -1,29 +1,34 @@
-// pages/welcome/welcome.js
+// pages/more-movie/more-movie.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isTouchBgColor: false
+    movies: []
   },
-  // 用户点击开始小程序按钮
-  onWelcomeTap () {
-    // 跳转到文章页面，路由
-    wx.switchTab({
-      url: "/pages/article/article"
-    })
-  },
-  onTouch(){
-    this.setData({
-      isTouchBgColor: !this.data.isTouchBgColor
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getMoreMovie(options.type)
+  },
 
+  // 请求更多电影数据
+  getMoreMovie(type){
+    wx.request({
+      url: 'http://t.talelin.com/v2/movie/'+type,
+      data: {
+        start:0,
+        count:20
+      },
+      success:(res)=>{
+        this.setData({
+          movies: res.data.subjects
+        })
+      }
+    })
   },
 
   /**

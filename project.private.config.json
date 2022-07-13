@@ -13,18 +13,25 @@
     "miniprogram": {
       "list": [
         {
-          "name": "post-detail",
-          "pathName": "pages/post-detail/post-detail",
-          "query": "pid=2794518",
-          "scene": null,
-          "launchMode": "default"
-        },
-        {
-          "name": "/article",
-          "pathName": "pages/article/article",
+          "name": "more-movie",
+          "pathName": "pages/more-movie/more-movie",
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "/movies",
+          "pathName": "pages/movies/movies",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "article",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }

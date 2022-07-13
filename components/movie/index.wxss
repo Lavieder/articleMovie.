@@ -1,0 +1,24 @@
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+}
+.movie-img {
+  width: 200rpx;
+  height: 280rpx;
+}
+.title {
+  margin: 14rpx 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.rate {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.rate .score {
+  margin-left: 16rpx;
+}

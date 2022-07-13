@@ -2,11 +2,36 @@
   "pages": [
     "pages/welcome/welcome",
     "pages/article/article",
-    "pages/post-detail/post-detail"
+    "pages/movies/movies",
+    "pages/post-detail/post-detail",
+    "pages/more-movie/more-movie"
   ],
-  "requiredBackgroundModes": ["audio", "location"],
+  "lazyCodeLoading": "requiredComponents",
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
   "window": {
     "navigationBarBackgroundColor": "#c22a1e"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": " 阅读",
+        "pagePath": "pages/article/article",
+        "iconPath": "/images/tab/post.png",
+        "selectedIconPath": "/images/tab/post@highlight.png"
+      },
+      {
+        "text": " 电影",
+        "pagePath": "pages/movies/movies",
+        "iconPath": "/images/tab/movie.png",
+        "selectedIconPath": "/images/tab/movie@highlight.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,12 @@
+<view class="container m-class">
+  <view class="title-container touch-bgcolor" bind:tap="onGoToMoreMovie" bind:touchstart="onTouchStart" bind:touchend="onTouchEnd">
+    <text>{{title}}</text>
+    <text class="more-movie">更多 ></text>
+  </view>
+  <view class="movie-wrap">
+    <block wx:for="{{movies}}" wx:key="id">
+      <movie movie="{{item}}" bind:onTouchStart="onMovieTouchStart" bind:onTouchEnd="onMovieTouchEnd" bind:tap="onTap"
+      movie-touch="touch-bgcolor" />
+    </block>
+  </view>
+</view>
