@@ -110,6 +110,25 @@ Page({
     })
   },
 
+  // 图片资源找不到,填充默认图片
+  onImageError(event){
+    const type = event.currentTarget.dataset.type;
+    const movieId= event.detail.movieid;
+    let data = [];
+    if(type == "in_theaters") data = this.data.inTheaters;
+    else if(type == "coming_soon") data = this.data.comingSoon;
+    else data = this.data.top250;
+    data = data.filter((res)=>{
+      if(res.id == movieId){
+        res.images.large = "/images/default-movie.jpg"
+      }
+      return res;
+    })
+    if(type == "in_theaters") this.setData({ inTheaters: data });
+    else if(type == "coming_soon") this.setData({ comingSoon: data });
+    else this.setData({ top250: data });
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

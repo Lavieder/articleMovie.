@@ -5,8 +5,8 @@
   </view>
   <view class="movie-wrap">
     <block wx:for="{{movies}}" wx:key="id">
-      <movie movie="{{item}}" bind:onTouchStart="onMovieTouchStart" bind:onTouchEnd="onMovieTouchEnd" bind:tap="onTap"
-      movie-touch="touch-bgcolor" />
+      <movie movie="{{item}}" bind:onTouchStart="onMovieTouchStart" bind:onTouchEnd="onMovieTouchEnd" bind:tap="onTap" bind:onImageError="onImageError" 
+      movie-touch="{{isTouchBgColor&&item.id==currentMovieId?'touch-bgcolor':''}}" />
     </block>
   </view>
 </view>

@@ -35,11 +35,11 @@ Component({
       this.triggerEvent("onTouchEnd");
     },
 
+    // 父组件：触摸具体某部电影显示选中的背景
     onTap(event){
       this.onMovieTouchStart(event);
       this.onMovieTouchEnd();
     },
-    // 父组件：触摸具体某部电影显示选中的背景
     onMovieTouchStart(event){
       this.setData({
         currentMovieId: event.detail.movieId,
@@ -52,5 +52,10 @@ Component({
         isTouchBgColor: false
       })
     },
+
+    // 图片资源找不到
+    onImageError(event){
+      this.triggerEvent("onImageError", event.detail);
+    }
   }
 })
