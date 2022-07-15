@@ -20,7 +20,3 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
-.touch-bgcolor {
-  background-color: rgba(0, 0, 0, 0.1)!important;
-}

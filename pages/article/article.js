@@ -26,9 +26,9 @@ Page({
     })
   },
 
-  onDetail (event){
+  onGoToDetail (event){
     this.onTouchStart(event);
-    const pid = event.detail.postId || event.currentTarget.dataset.postid;
+    const pid = event.detail.postId || event.currentTarget.dataset.postId;
     wx.navigateTo({
       url: '/pages/post-detail/post-detail?pid='+pid,
     })

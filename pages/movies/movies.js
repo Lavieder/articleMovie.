@@ -11,8 +11,7 @@ Page({
     searchResult: false,
     inputValue: "",
     serachMovies: {},
-    type: null,
-    isTouchBgColor: false
+    movieTouch: {}
   },
 
   /**
@@ -64,6 +63,7 @@ Page({
 
   // 跳转到更多页面
   onGoToMoreMovie(event){
+    // console.log(event);
     this.onTouchStart(event);
     wx.navigateTo({
       url: "/pages/more-movie/more-movie?type="+event.currentTarget.dataset.type
@@ -98,22 +98,46 @@ Page({
   
   // 触摸显示选中的背景
   onTouchStart(event){
-    this.setData({
-      type: event.currentTarget.dataset.type,
-      isTouchBgColor: true
-    })
+    let movieId = null;
+    if(event.type != "onGoToMoreMovie"){
+      movieId = event.detail.movieId;
+    }
+    if(movieId != undefined){
+      const movieTouch = {
+        currentMovieId: movieId,
+        isTouchBgColor: true
+      }
+      this.setData({
+        movieTouch
+      })
+    } else {
+      const movieTouch = {
+        type: event.currentTarget.dataset.type,
+        isTouchBgColor: true
+      }
+      this.setData({
+        movieTouch
+      })
+    }
+    
   },
   onTouchEnd(event){
-    this.setData({
+    // console.log(event);
+    const movieTouch = {
       type: null,
-      isTouchBgColor: false
+      isTouchBgColor: false,
+      currentMovieId: -1
+    }
+    this.setData({
+      movieTouch
     })
   },
+  
 
   // 图片资源找不到,填充默认图片
   onImageError(event){
     const type = event.currentTarget.dataset.type;
-    const movieId= event.detail.movieid;
+    const movieId= event.detail.movieId;
     let data = [];
     if(type == "in_theaters") data = this.data.inTheaters;
     else if(type == "coming_soon") data = this.data.comingSoon;
@@ -128,6 +152,14 @@ Page({
     else if(type == "coming_soon") this.setData({ comingSoon: data });
     else this.setData({ top250: data });
   },
+
+  // 跳转到电影详情页面
+  onGoToDetail(){
+    // wx.navigateTo({
+    //   url: '/pages/movie-detail/movie-detail',
+    // })
+  },
+
   
   /**
    * 生命周期函数--监听页面初次渲染完成

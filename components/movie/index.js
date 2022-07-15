@@ -1,27 +1,32 @@
 // components/movies/index.js
 Component({
-  externalClasses: ["movie-touch"],
   /**
    * 组件的属性列表
    */
   properties: {
-    movie: Object
+    movie: Object,
+    movieTouch: Object
   },
 
   /**
    * 组件的初始数据
    */
   data: {
+
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    onTap(event){
+      // console.log(event);
+      this.triggerEvent("onGoToDetail");
+    },
     // 图片资源找不到
     onImageError(event){
       const movie = {}
-      movie.movieid = event.currentTarget.dataset.movieid;
+      movie.movieId = event.currentTarget.dataset.movieId;
       movie.errMsg = event.detail.errMsg;
       movie.timeStamp = event.timeStamp;
       movie.mut = event.mut;

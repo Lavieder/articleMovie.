@@ -22,3 +22,7 @@
 .rate .score {
   margin-left: 16rpx;
 }
+
+.touch-bgcolor {
+  background-color: rgba(0, 0, 0, 0.1);
+}

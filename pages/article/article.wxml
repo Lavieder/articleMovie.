@@ -4,12 +4,12 @@
   <view>
     <swiper autoplay circular indicator-dots="true" indicator-active-color="#ffffff">
       <swiper-item wx:for="{{bannerList}}" wx:for-item="banner" wx:key="bid">
-        <image bind:tap="onDetail" data-postId="{{banner.bid}}" src="{{banner.imgSrc}}"></image>
+        <image bind:tap="onGoToDetail" data-post-id="{{banner.bid}}" src="{{banner.imgSrc}}"></image>
       </swiper-item>
     </swiper>
   </view>
   <!-- 文章列表 -->
   <block wx:for="{{articleList}}" wx:key="postId">
-    <article articleItem="{{item}}" bind:onGoToDetail="onDetail" bind:onTouchStart="onTouchStart" bind:onTouchEnd="onTouchEnd" article-touch="{{isTouchBgColor&&item.postId==currentPostId?'touch-bgcolor':''}}" />
+    <article articleItem="{{item}}" bind:articleTap="onGoToDetail" bind:onTouchStart="onTouchStart" bind:onTouchEnd="onTouchEnd" article-touch="{{isTouchBgColor&&item.postId==currentPostId?'touch-bgcolor':''}}" />
   </block>
 </view>

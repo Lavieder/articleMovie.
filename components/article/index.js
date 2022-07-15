@@ -25,7 +25,7 @@ Component({
       }
       // 向父组件通信，传递事件
       // triggerEvent("父组件的自定义方法名"，需要传递的值)
-      this.triggerEvent("onGoToDetail", data);
+      this.triggerEvent("articleTap", data);
     },
     // 触摸显示选中的背景
     onTouchStart(event){

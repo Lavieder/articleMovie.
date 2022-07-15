@@ -6,6 +6,7 @@ Page({
    */
   data: {
     movies: [],
+    movieTouch: {},
     _movies: [],
     _type: ''
   },
@@ -38,7 +39,7 @@ Page({
   },
   // 图片资源找不到,填充默认图片
   onImageError(event){
-    const movieId= event.detail.movieid;
+    const movieId= event.detail.movieId;
     const movies = this.data.movies.filter((res)=>{
       if(res.id == movieId){
         res.images.large = "/images/default-movie.jpg"
@@ -46,6 +47,49 @@ Page({
       return res;
     })
     this.setData({ movies });
+  },
+
+  // 跳转到电影详情页
+  onTap(event){
+    this.onTouchStart(event);
+    const movieId = event.currentTarget.dataset.movieId
+    wx.navigateTo({
+      url: '/pages/movie-detail/movie-detail?movieid='+movieId,
+    })
+    this.onTouchEnd();
+  },
+
+  // 触摸显示选中的背景
+  onTouchStart(event){
+    let movieId = null;
+    if(event.type != "tap"){
+      movieId = event.detail.movieId;
+    }
+    if(movieId != undefined){
+      const movieTouch = {
+        currentMovieId: movieId,
+        isTouchBgColor: true
+      }
+      this.setData({
+        movieTouch
+      })
+    } else {
+      const movieTouch = {
+        isTouchBgColor: true
+      }
+      this.setData({
+        movieTouch
+      })
+    }
+  },
+  onTouchEnd(event){
+    const movieTouch = {
+      isTouchBgColor: false,
+      currentMovieId: -1
+    }
+    this.setData({
+      movieTouch
+    })
   },
 
   /**

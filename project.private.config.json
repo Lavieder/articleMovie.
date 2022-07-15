@@ -16,8 +16,8 @@
           "name": "more-movie",
           "pathName": "pages/more-movie/more-movie",
           "query": "type=top250",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "/movies",
@@ -32,6 +32,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "movie-detail",
+          "pathName": "pages/movie-detail/movie-detail",
+          "query": "movieId=95",
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }

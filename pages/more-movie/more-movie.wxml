@@ -1,5 +1,5 @@
 <view class="container">
   <block wx:for="{{movies}}" wx:key="index">
-    <movie movie="{{item}}" class="movie" bind:onImageError="onImageError" />
+    <movie movie="{{item}}" data-movie-id="{{item.id}}" movieTouch="{{movieTouch}}" class="movie" bind:onTouchStart="onTouchStart" bind:onTouchEnd="onTouchEnd" bind:tap="onTap" bind:onImageError="onImageError" />
   </block>
 </view>
