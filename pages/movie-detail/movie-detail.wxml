@@ -1,7 +1,7 @@
 <view class="container">
-  <image class="head-img" mode="aspectFill" src="{{movie.image}}"></image>
+  <image class="head-img" mode="aspectFill" src="{{movie.image}}" bind:error="onImageError"></image>
   <view class="movie-text-wrap">
-    <view class="title-content">
+    <view class="padding title-content">
       <text class="mian-title">{{movie.title}}</text>
       <text class="sub-title">{{movie.subtitle}}</text>
       <view class="plain-comment">
@@ -12,30 +12,44 @@
       </view>
       <image bind:tap="onPreViewImage" class="movie-img" src="{{movie.image}}"></image>
     </view>
-    <view class="movie-actor">
+    <view class="padding movie-actor">
       <text class="title">{{movie.title}}</text>
       <view class="actor-wrap">
         <text class="sub-font">评分</text>
         <l-rate score="{{movie.rating}}" size="22" item-gap="5" disabled/>
-        <text class="rate-score">{{movie.rating}}</text>
+        <text class="rate-score">{{movie.average}}</text>
       </view>
       <view class="actor-wrap">
         <text class="sub-font">导演</text>
-        <text>{{movie.directors}}</text>
+        <text class="actor-name">{{movie.directors}}</text>
       </view>
       <view class="actor-wrap">
-        <text class="sub-font">演员</text>
-        <text>{{movie.casts}}</text>
+        <text class="sub-font">影人</text>
+        <text class="actor-name">{{movie.castsName}}</text>
       </view>
       <view class="actor-wrap">
         <text class="sub-font">类型</text>
-          <text>{{movie.genres}}</text>
+        <text class="actor-name">{{movie.genres}}</text>
       </view>
-      
     </view>
     <view class="horizon"></view>
-    <view>
-    12
+    <view class="padding synopsis-wrap">
+      <view class="sub-font block-title">剧情简介</view>
+      <view class="synopsis-content">{{movie.summary}}</view>
+    </view>
+    <view class="horizon"></view>
+    <view class="padding castInfo">
+      <view class="sub-font block-title">影人</view>
+      <scroll-view scroll-x="{{true}}">
+        <view class="casts-wrap">
+          <block wx:for="{{movie.castsInfo}}" wx:key="index">
+            <view class="cast-scroll">
+              <image class="cast-img" src="{{item.image}}"></image>
+              <text>{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
     </view>
   </view>
 </view>

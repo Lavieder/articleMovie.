@@ -36,7 +36,7 @@
         {
           "name": "movie-detail",
           "pathName": "pages/movie-detail/movie-detail",
-          "query": "movieId=95",
+          "query": "movieId=305",
           "scene": null,
           "launchMode": "default"
         }

@@ -20,8 +20,10 @@ Component({
    */
   methods: {
     onTap(event){
-      // console.log(event);
-      this.triggerEvent("onGoToDetail");
+      const data = {
+        movieId: this.data.movie.id
+      }
+      this.triggerEvent("onGoToDetail",data);
     },
     // 图片资源找不到
     onImageError(event){

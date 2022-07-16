@@ -1,12 +1,12 @@
 // pages/movie-detail/movie-detail.js
-import { convertToCastString } from "../../util/util"
+import { convertToCastString, convertToCastInfos } from "../../util/util"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    movie: {}
+    movie: {},
   },
 
   /**
@@ -18,10 +18,6 @@ Page({
       url: 'http://t.talelin.com/v2/movie/subject/'+movieId,
       success:res=>{
         this.processMovieData(res.data);
-        // this.setData({
-        //   movie: res.data
-        // })
-        // console.log(res.data)
       }
     })
   },
@@ -33,12 +29,21 @@ Page({
     })
   },
 
+  // 图片资源找不到
+  onImageError(){
+    const movie = this.data.movie;
+    movie.image = "/images/default-movie.jpg"
+    this.setData({
+      movie
+    })
+  },
+
   // 处理电影数据
   processMovieData(movie){
     const data = {};
     data.directors = convertToCastString(movie.directors, " / ");
-    data.casts = convertToCastString(movie.casts, " / ");
-    data.image = movie.images.large;
+    data.castsName = convertToCastString(movie.casts, " / ");
+    data.image = movie.images.large ?movie.images.large : "/images/default-movie.jpg";
     data.title = movie.title;
     data.subtitle = movie.countries[0]+' - '+movie.year;
     data.wish_count = movie.wish_count;
@@ -46,7 +51,8 @@ Page({
     data.rating = movie.rating.stars/10;
     data.average = movie.rating.average;
     data.genres = movie.genres.join("、");
-    console.log(data);
+    data.summary = movie.summary ? movie.summary : "暂无简介...";
+    data.castsInfo = convertToCastInfos(movie.casts);
     this.setData({
       movie: data
     })

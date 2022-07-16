@@ -154,10 +154,11 @@ Page({
   },
 
   // 跳转到电影详情页面
-  onGoToDetail(){
-    // wx.navigateTo({
-    //   url: '/pages/movie-detail/movie-detail',
-    // })
+  onGoToDetail(event){
+    // console.log(event.detail.movieId);
+    wx.navigateTo({
+      url: '/pages/movie-detail/movie-detail?movieId='+event.detail.movieId
+    })
   },
 
   

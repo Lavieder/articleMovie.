@@ -16,16 +16,17 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  padding: 34rpx 30rpx;
-  padding-top: 0;
-  box-sizing: border-box;
   width: 100%;
   font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.padding {
+  padding: 0 30rpx;
+  box-sizing: border-box;
 }
 .title-content {
   display: flex;
   flex-direction: column;
-  height: 350rpx;
+  height: 352rpx;
 } 
 
 .mian-title {
@@ -53,7 +54,7 @@
 }
 .plain-font {
   font-size: 22rpx;
-  color: #4e4e4e;
+  color: #363636;
   margin-right: 30rpx;
 }
 .movie-img {
@@ -70,6 +71,7 @@
   flex-direction: column;
 }
 .movie-actor .title {
+  width: 500rpx;
   font-size: 30rpx;
   font-weight: 600;
   margin-bottom: 30rpx;
@@ -77,12 +79,16 @@
 .actor-wrap{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: top;
   margin-top: 10rpx;
   font-size: 26rpx;
 }
+.actor-name {
+  flex: 1;
+}
 .rate-score {
   margin-left: 10rpx;
+  flex: 1;
 }
 .sub-font {
   color: #838383;
@@ -90,9 +96,45 @@
 }
 
 .horizon {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  margin: 40rpx 0;
   border: 3rpx solid #dfdfdf;
+}
+
+.synopsis-wrap {
+  font-size: 26rpx;
+}
+.block-title {
+  margin-bottom: 20rpx;
+}
+.synopsis-content {
+  line-height: 44rpx;
+  color: #424242;
+}
+
+
+.castInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  margin-bottom: 70rpx;
+}
+.casts-wrap {
+  display: flex;
+  flex-direction: row;
+}
+.cast-scroll {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30rpx;
+}
+.cast-scroll:last-child {
+  margin-right: 0;
+}
+.cast-img {
+  width: 175rpx;
+  height: 238rpx;
+}
+.cast-scroll text {
+  text-align: center;
 }

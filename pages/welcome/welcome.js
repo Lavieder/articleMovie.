@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isTouchBgColor: false
+    isTouchBgColor: false,
+    userInfo: {}
   },
   // 用户点击开始小程序按钮
   onWelcomeTap () {
@@ -23,7 +24,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getSetting({
+      success:res=>{
+        if(res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            withCredentials: false,
+            success:res=>{
+              this.setData({
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
   },
 
   /**

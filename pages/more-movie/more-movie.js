@@ -50,11 +50,11 @@ Page({
   },
 
   // 跳转到电影详情页
-  onTap(event){
+  onGoToDetail(event){
     this.onTouchStart(event);
-    const movieId = event.currentTarget.dataset.movieId
+    const movieId = event.detail.movieId
     wx.navigateTo({
-      url: '/pages/movie-detail/movie-detail?movieid='+movieId,
+      url: '/pages/movie-detail/movie-detail?movieId='+movieId,
     })
     this.onTouchEnd();
   },

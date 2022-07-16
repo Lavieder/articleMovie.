@@ -7,15 +7,18 @@
   
 }
 
-.l-avatar {
+.user-avatar {
   margin-top: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
 }
-
-
 .user-name {
   margin-top: 70rpx;
   font-size: 33rpx;
   font-weight: bold;
+  color: #666666;
 }
 
 .welcome-btn {
@@ -34,4 +37,3 @@
 page {
   background-color: #b3d4db;
 }
-
